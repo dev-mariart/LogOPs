@@ -1,0 +1,339 @@
+:root {
+    --primary-light: #8abdff;
+    --primary: #6d5dfc;
+    --primary-dark: #5b0eeb;
+    --white: #FFFFFF;
+    --greyLight-1: #E4EBF5;
+    --greyLight-2: #c8d0e7;
+    --greyLight-3: #bec8e4;
+    --greyDark: #9baacf;
+}
+  
+body, h1, h2, h3, p, ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+.container-fluid {
+    padding: 0;
+    position: relative;
+}
+
+
+.left-container {
+    background-color: #0097B2;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.left-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+.circle {
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.right-container {
+    text-align: center;
+    padding: 20px;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 90px;
+    margin-bottom: 20px;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-group-text {
+    background-color: white;
+    border: 1px solid gray;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid gray;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="password"]:focus {
+    border-color: black;
+}
+
+
+.input-group input[type="text"]::placeholder,
+.input-group input[type="password"]::placeholder {
+    font-size: 14px;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    opacity: 0.5;
+}
+
+.input-group input[type="text"]:focus::placeholder,
+.input-group input[type="password"]:focus::placeholder {
+    font-size: 10px;
+    top: -20px;
+    opacity: 1;
+}
+
+
+.btn-primary {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+.right-container p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    display: flex;
+}
+
+
+
+.social-icons a i {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #9b9b9b; 
+    transition: all 0.3s ease; 
+}
+
+
+.social-icons a i:hover {
+    font-size: 28px;
+    color: blue; 
+}
+
+
+@media (max-width: 767px) {
+    
+    body, html {
+        overflow-x: hidden;
+    }
+
+    .container-fluid {
+        overflow-x: hidden;
+    }
+}
+
+.error-message {
+    color: red; 
+    font-size: 12px; 
+    margin-top: 10px; 
+}
+
+
+#content-wrapper {
+    background: var(--greyLight-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+#dashboard-container {
+    border-radius: 48px;
+    box-shadow: 0.8rem 0.8rem 1.4rem var(--greyLight-2), -0.2rem -0.2rem 1.8rem var(--white);
+    padding: 50px;
+    text-align: center;
+}
+
+
+#current-datetime {
+    font-weight: 200;
+    color: #9e9e9e;
+    font-size: 18px;
+    margin: 0 10px; 
+}
+
+
+.employee-name {
+    font-size: 40px;
+    
+}
+
+.button-container button {
+    margin: 20px;
+    border: none;
+    border-radius: 16px; 
+    padding: 25px 41px; 
+    font-size: 12px;
+    line-height: 16px; 
+    color: #0097B2;
+    text-transform: uppercase;
+    transition: all 0.5s ease !important;
+    
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+
+.button--raised-rounded {
+    box-shadow: -10px -10px 30px 0 #ffffff, 10px 10px 30px 0 rgba(175, 175, 192, 0.4), inset 10px 10px 10px -5px white, inset -10px -10px 10px -5px rgba(175, 175, 192, 0.25);
+}
+
+.button--raised-rounded:hover {
+    box-shadow: inset -10px -10px 10px -5px white, inset 10px 10px 10px -5px rgba(175, 175, 192, 0.25) !important;
+}
+
+.button-container button.selected {
+    box-shadow: inset -10px -10px 10px -5px white, inset 10px 10px 10px -5px rgba(175, 175, 192, 0.25) !important;
+}
+
+
+@media (max-width: 768px) {
+    .button-container button {
+        width: 100%;
+        margin : 0px;
+        margin-bottom: 20px; 
+    }
+
+
+    #dashboard-container {
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+
+
+.dashboard-button {
+    background-color: #0097B2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-button i {
+    margin-right: 5px;
+}
+
+.dashboard-button:hover {
+    background-color: black;
+}
+
+#top-right-buttons {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+}
+
+#top-right-buttons a {
+    text-decoration: none;
+}
+
+.alert-success {
+    background-color: #b2e0b3; 
+    color: #fff; 
+    padding: 15px; 
+    border-radius: 8px; 
+    margin-top: 15px; 
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); 
+    text-align: center; 
+    font-size: 16px; 
+    transition: all 0.3s ease; 
+}
+
+
+.alert-success.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.alert-success.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.alert-danger {
+    background-color: #e0b2b2; 
+    color: #fff; 
+    padding: 15px; 
+    border-radius: 8px; 
+    margin-top: 15px; 
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); 
+    text-align: center; 
+    font-size: 16px; 
+    transition: all 0.3s ease; 
+}
+
+
+.alert-success.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.alert-success.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+}
