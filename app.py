@@ -4,18 +4,17 @@ from datetime import date
 from functools import wraps
 
 app = Flask(__name__)
-app.secret_key = "tu_clave_secreta"  # Cambia esto por una clave secreta segura
+app.secret_key = "REEMPLAZA_CON_CLAVE_SECRETA_SEGURA"  # Aqui tu clave secreta
 
-# Configuración de la conexión a la base de datos
+# Conexión a la base de datos
 conn = psycopg2.connect(
-    database="logOps_db",
-    user="postgres",
-    password="root1603",
-    host="localhost",
-    port="5432"
+    database="REEMPLAZA_CON_NOMBRE_BASE_DATOS",  # Aqui el nombre de tu DB
+    user="REEMPLAZA_CON_USUARIO",  # Aqui tu user
+    password="REEMPLAZA_CON_CONTRASEÑA",  # Aqui tu contraseña
+    host="REEMPLAZA_CON_HOST",  # Aqui el host
+    port="REEMPLAZA_CON_PUERTO"  # Aqui el N° puerto
 )
 
-# Decorador para verificar la autenticación
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
@@ -72,7 +71,6 @@ def logout():
 @login_required
 def marcar(numero_empleado, tipo_marca):
     try:
-        # Verifica si ya existe una marca para el tipo y el empleado en el día actual
         cur = conn.cursor()
         cur.execute("SELECT COUNT(*) FROM marcas_horario WHERE numero_empleado = %s AND tipo_marca = %s AND timestamp::date = %s",
                     (numero_empleado, tipo_marca, date.today()))
